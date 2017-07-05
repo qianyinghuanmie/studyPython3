@@ -2,6 +2,8 @@
 # decorator的运用
 import functools
 
+import functools
+
 def log(param):
     if hasattr(param,'__call__'):
         @functools.wraps(param)
