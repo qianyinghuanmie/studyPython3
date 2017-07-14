@@ -19,6 +19,15 @@ import orm
 from coroweb import add_routes, add_static
 
 def init_jinja2(app, **kw):
+    '''
+     初始化加载模板
+    block_start_string 字符串标记块的开头。默认为'{%'。
+    block_end_string 字符串标记块的结尾。默认为'%}'。
+    variable_start_string 标记打印语句开头的字符串。默认为'{{'。
+    variable_end_string  标记打印语句结束的字符串。默认为 '}}'。
+    autoescape  True默认启用了XML / HTML自动转义功能
+    auto_reload 每次模板被请求auto_reload设置为True（默认），加载程序将检查源是否更改，如果是，则将重新加载模板
+    '''
     logging.info('init jinja2...')
     options = dict(
         autoescape = kw.get('autoescape', True),
